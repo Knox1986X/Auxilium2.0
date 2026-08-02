@@ -1,0 +1,76 @@
+{
+  "itemGroup.auxilium": "Auxilium",
+  
+  "item.auxilium.iron_battle_axe": "Iron Battle Axe",
+  "item.auxilium.golden_battle_axe": "Golden Battle Axe",
+  "item.auxilium.diamond_battle_axe": "Diamond Battle Axe",
+  "item.auxilium.netherite_battle_axe": "Netherite Battle Axe",
+  
+  "item.auxilium.iron_dagger": "Iron Dagger",
+  "item.auxilium.golden_dagger": "Golden Dagger",
+  "item.auxilium.diamond_dagger": "Diamond Dagger",
+  "item.auxilium.netherite_dagger": "Netherite Dagger",
+  
+  "item.auxilium.iron_shield": "Iron Shield",
+  "item.auxilium.golden_shield": "Golden Shield",
+  "item.auxilium.diamond_shield": "Diamond Shield",
+  "item.auxilium.netherite_shield": "Netherite Shield",
+  "item.auxilium.iron_light_shield": "Iron Light Shield",
+  "item.auxilium.golden_light_shield": "Golden Light Shield",
+  "item.auxilium.diamond_light_shield": "Diamond Light Shield",
+  "item.auxilium.netherite_light_shield": "Netherite Light Shield",
+  
+  "item.auxilium.iron_scythe": "Iron Scythe",
+  "item.auxilium.golden_scythe": "Golden Scythe",
+  "item.auxilium.diamond_scythe": "Diamond Scythe",
+  "item.auxilium.netherite_scythe": "Netherite Scythe",
+  
+  "item.auxilium.iron_multi_tool": "Iron Multi-Tool",
+  "item.auxilium.golden_multi_tool": "Golden Multi-Tool",
+  "item.auxilium.diamond_multi_tool": "Diamond Multi-Tool",
+  "item.auxilium.netherite_multi_tool": "Netherite Multi-Tool",
+  
+  "item.auxilium.leather_backpack": "Leather Backpack",
+  "item.auxilium.iron_backpack": "Iron Backpack",
+  "item.auxilium.golden_backpack": "Golden Backpack",
+  "item.auxilium.diamond_backpack": "Diamond Backpack",
+  "item.auxilium.netherite_backpack": "Netherite Backpack",
+  
+  "item.auxilium.diamond_totem": "Diamond Totem of Undying",
+  "item.auxilium.netherite_totem": "Netherite Totem of Undying",
+  
+  "item.auxilium.iron_great_sword": "Iron Greatsword",
+  "item.auxilium.golden_great_sword": "Golden Greatsword",
+  "item.auxilium.diamond_great_sword": "Diamond Greatsword",
+  "item.auxilium.netherite_great_sword": "Netherite Greatsword",
+  
+  "item.auxilium.iron_katar": "Iron Katar",
+  "item.auxilium.golden_katar": "Golden Katar",
+  "item.auxilium.diamond_katar": "Diamond Katar",
+  "item.auxilium.netherite_katar": "Netherite Katar",
+  
+  "item.auxilium.iron_katana": "Iron Katana",
+  "item.auxilium.golden_katana": "Golden Katana",
+  "item.auxilium.diamond_katana": "Diamond Katana",
+  "item.auxilium.netherite_katana": "Netherite Katana",
+  
+  "item.auxilium.iron_spear": "Iron Spear",
+  "item.auxilium.golden_spear": "Golden Spear",
+  "item.auxilium.diamond_spear": "Diamond Spear",
+  "item.auxilium.netherite_spear": "Netherite Spear",
+  
+  "item.auxilium.iron_scimitar": "Iron Scimitar",
+  "item.auxilium.golden_scimitar": "Golden Scimitar",
+  "item.auxilium.diamond_scimitar": "Diamond Scimitar",
+  "item.auxilium.netherite_scimitar": "Netherite Scimitar",
+  
+  "item.auxilium.great_bow": "Great Bow",
+
+  "auxilium.configuration.title": "Auxilium Configs",
+  "auxilium.configuration.section.auxilium.common.toml": "Auxilium Configs",
+  "auxilium.configuration.section.auxilium.common.toml.title": "Auxilium Configs",
+  "auxilium.configuration.items": "Item List",
+  "auxilium.configuration.logDirtBlock": "Log Dirt Block",
+  "auxilium.configuration.magicNumberIntroduction": "Magic Number Text",
+  "auxilium.configuration.magicNumber": "Magic Number"
+}
