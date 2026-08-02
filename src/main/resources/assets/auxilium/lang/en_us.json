@@ -1,0 +1,13 @@
+{
+  "itemGroup.auxilium": "Auxilium Tab",
+  "block.auxilium.example_block": "Example Block",
+  "item.auxilium.example_item": "Example Item",
+
+  "auxilium.configuration.title": "Auxilium Configs",
+  "auxilium.configuration.section.auxilium.common.toml": "Auxilium Configs",
+  "auxilium.configuration.section.auxilium.common.toml.title": "Auxilium Configs",
+  "auxilium.configuration.items": "Item List",
+  "auxilium.configuration.logDirtBlock": "Log Dirt Block",
+  "auxilium.configuration.magicNumberIntroduction": "Magic Number Text",
+  "auxilium.configuration.magicNumber": "Magic Number"
+}
