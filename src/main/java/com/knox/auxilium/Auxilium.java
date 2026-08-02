@@ -3,6 +3,8 @@ package com.knox.auxilium;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
+import com.knox.auxilium.item.ModItems;
+import com.knox.auxilium.item.ModEvents;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -45,22 +47,77 @@ public class Auxilium {
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "auxilium" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    // Creates a new Block with the id "auxilium:example_block", combining the namespace and path
-    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    // Creates a new BlockItem with the id "auxilium:example_block", combining the namespace and path
-    public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
-
-    // Creates a new food item with the id "auxilium:example_item", nutrition 1 and saturation 2
-    public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()
-            .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
-
-    // Creates a creative tab with the id "auxilium:auxilium_tab" for the example item, that is placed after the combat tab
+    // Creates a creative tab with the id "auxilium:auxilium_tab" for all mod items
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AUXILIUM_TAB = CREATIVE_MODE_TABS.register("auxilium_tab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.auxilium")) //The language key for the title of your CreativeModeTab
+            .title(Component.translatable("itemGroup.auxilium"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
+            .icon(() -> ModItems.IRON_BATTLE_AXE.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                // Battle Axes
+                output.accept(ModItems.IRON_BATTLE_AXE.get());
+                output.accept(ModItems.GOLDEN_BATTLE_AXE.get());
+                output.accept(ModItems.DIAMOND_BATTLE_AXE.get());
+                output.accept(ModItems.NETHERITE_BATTLE_AXE.get());
+                // Daggers
+                output.accept(ModItems.IRON_DAGGER.get());
+                output.accept(ModItems.GOLDEN_DAGGER.get());
+                output.accept(ModItems.DIAMOND_DAGGER.get());
+                output.accept(ModItems.NETHERITE_DAGGER.get());
+                // Shields
+                output.accept(ModItems.IRON_SHIELD.get());
+                output.accept(ModItems.GOLDEN_SHIELD.get());
+                output.accept(ModItems.DIAMOND_SHIELD.get());
+                output.accept(ModItems.NETHERITE_SHIELD.get());
+                output.accept(ModItems.IRON_LIGHT_SHIELD.get());
+                output.accept(ModItems.GOLDEN_LIGHT_SHIELD.get());
+                output.accept(ModItems.DIAMOND_LIGHT_SHIELD.get());
+                output.accept(ModItems.NETHERITE_LIGHT_SHIELD.get());
+                // Scythes
+                output.accept(ModItems.IRON_SCYTHE.get());
+                output.accept(ModItems.GOLDEN_SCYTHE.get());
+                output.accept(ModItems.DIAMOND_SCYTHE.get());
+                output.accept(ModItems.NETHERITE_SCYTHE.get());
+                // Multi-tools
+                output.accept(ModItems.IRON_MULTI_TOOL.get());
+                output.accept(ModItems.GOLDEN_MULTI_TOOL.get());
+                output.accept(ModItems.DIAMOND_MULTI_TOOL.get());
+                output.accept(ModItems.NETHERITE_MULTI_TOOL.get());
+                // Backpacks
+                output.accept(ModItems.LEATHER_BACKPACK.get());
+                output.accept(ModItems.IRON_BACKPACK.get());
+                output.accept(ModItems.GOLDEN_BACKPACK.get());
+                output.accept(ModItems.DIAMOND_BACKPACK.get());
+                output.accept(ModItems.NETHERITE_BACKPACK.get());
+                // Improved Totems
+                output.accept(ModItems.DIAMOND_TOTEM.get());
+                output.accept(ModItems.NETHERITE_TOTEM.get());
+                // Great Swords
+                output.accept(ModItems.IRON_GREAT_SWORD.get());
+                output.accept(ModItems.GOLDEN_GREAT_SWORD.get());
+                output.accept(ModItems.DIAMOND_GREAT_SWORD.get());
+                output.accept(ModItems.NETHERITE_GREAT_SWORD.get());
+                // Katars
+                output.accept(ModItems.IRON_KATAR.get());
+                output.accept(ModItems.GOLDEN_KATAR.get());
+                output.accept(ModItems.DIAMOND_KATAR.get());
+                output.accept(ModItems.NETHERITE_KATAR.get());
+                // Katanas
+                output.accept(ModItems.IRON_KATANA.get());
+                output.accept(ModItems.GOLDEN_KATANA.get());
+                output.accept(ModItems.DIAMOND_KATANA.get());
+                output.accept(ModItems.NETHERITE_KATANA.get());
+                // Spears
+                output.accept(ModItems.IRON_SPEAR.get());
+                output.accept(ModItems.GOLDEN_SPEAR.get());
+                output.accept(ModItems.DIAMOND_SPEAR.get());
+                output.accept(ModItems.NETHERITE_SPEAR.get());
+                // Scimitars
+                output.accept(ModItems.IRON_SCIMITAR.get());
+                output.accept(ModItems.GOLDEN_SCIMITAR.get());
+                output.accept(ModItems.DIAMOND_SCIMITAR.get());
+                output.accept(ModItems.NETHERITE_SCIMITAR.get());
+                // Great Bow
+                output.accept(ModItems.GREAT_BOW.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -69,16 +126,15 @@ public class Auxilium {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        // Register the Deferred Register to the mod event bus so blocks get registered
+        // Register the Deferred Registers to the mod event bus
         BLOCKS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
         ITEMS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
+        
+        // Register our custom items
+        ModItems.ITEMS.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class (Auxilium) to respond directly to events.
-        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
@@ -88,6 +144,7 @@ public class Auxilium {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         
         LOGGER.info("Auxilium mod loaded! Created by Knox");
+        LOGGER.info("Added: Battle Axes, Daggers, Enhanced Shields, Scythes, Multi-tools, Backpacks, Improved Totems, Great Swords, Katars, Katanas, Spears, Scimitars, Great Bow");
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -106,7 +163,7 @@ public class Auxilium {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(EXAMPLE_BLOCK_ITEM);
+            // No blocks yet
         }
     }
 
